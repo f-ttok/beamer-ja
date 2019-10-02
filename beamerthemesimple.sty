@@ -1,0 +1,78 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemesimple}
+\RequirePackage{xkeyval}
+
+\DeclareOptionX{primary}{\definecolor{primary}{HTML}{#1}}
+\DeclareOptionX{accent}{\definecolor{accent}{HTML}{#1}}
+\DeclareOptionX{example}{\definecolor{example}{HTML}{#1}}
+\DeclareOptionX{fg_default}{\definecolor{fg_default}{HTML}{#1}}
+\DeclareOptionX{bg_default}{\definecolor{bg_default}{HTML}{#1}}
+\DeclareOptionX{totalframenumber}{\let\totalframenumber#1}
+\ExecuteOptionsX{
+  primary=1874c4,
+  accent=852525,
+  example=495057,
+  fg_default=343a40,
+  bg_default=ffffff,
+  totalframenumber=\inserttotalframenumber
+}
+\ProcessOptionsX\relax
+
+\usecolortheme[named=primary]{structure}
+\usecolortheme{rose}
+\setbeamercolor{normal text}{fg=fg_default}
+\setbeamercolor{alerted text}{fg=accent}
+\setbeamercolor{example text}{fg=example}
+\setbeamercolor{frametitle}{fg=fg_default!95!bg_default}
+\setbeamercolor{itemize item}{fg=fg_default!80!bg_default}
+\setbeamercolor{itemize subitem}{fg=fg_default!50!bg_default}
+\setbeamercolor{enumerate item}{fg=fg_default}
+\setbeamercolor{bibliography entry author}{fg=primary!90!bg_default}
+\setbeamercolor{bibliography entry title}{fg=primary}
+\setbeamercolor{bibliography entry location}{fg=fg_default}
+\setbeamercolor{bibliography entry note}{fg=fg_default}
+\setbeamercolor{bibliography item}{fg=primary}
+\setbeamercolor{footline}{fg=bg_default,bg=fg_default!90!bg_default}
+\usefonttheme{professionalfonts}
+\usefonttheme{metropolis}
+\setbeamerfont{title}{size=\Large}
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{frametitle}{size=\Large, series=\mdseries}
+\setbeamerfont{footline}{series=\bfseries}
+\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
+\setbeamerfont{section in toc}{size=\normalsize, series=\bfseries}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
+\setbeamerfont{enumerate item}{series=\bfseries}
+\setbeamerfont{bibliography entry author}{size=\scriptsize, series=\bfseries}
+\setbeamerfont{bibliography entry title}{size=\scriptsize, series=\bfseries}
+\setbeamerfont{bibliography entry location}{size=\scriptsize, series=\mdseries}
+\setbeamerfont{bibliography entry note}{size=\scriptsize, series=\mdseries}
+\setbeamerfont{bibliography item}{size=\scriptsize}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{title page}[default][left]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{frametitle}{
+  \vskip5pt
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{frametitle}
+    \usebeamerfont{frametitle}\hspace{13pt}\insertframetitle\hfill
+    \normalsize\mdseries\insertframenumber\,/\,\totalframenumber
+    \hspace{13pt}
+  \end{beamercolorbox}
+  \vskip-3.4pt
+  {\color{fg_default!25!bg_default}\hrule height 1.5pt width 0.93\paperwidth}
+  \vskip-6pt
+}
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=0.7ex]{footline}
+    \usebeamerfont{footline}\hspace{1em}\insertsection ｜\insertsubsection \hfill \insertshortauthor \hspace{1em}
+  \end{beamercolorbox}
+  \vskip0pt
+}
+\setbeamersize{text margin left=4.5mm, text margin right=4.5mm}
+\setbeamercovered{transparent}
+\setlength{\leftmargini}{12pt}
+\setlength{\leftmarginii}{12pt}
+\setlength{\leftmarginiii}{12pt}
