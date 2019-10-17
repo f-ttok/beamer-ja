@@ -2,7 +2,6 @@
 \documentclass[12pt,unicode]{beamer}
 
 \usetheme[
-  totalframenumber=5,
   primary=2B6A6C,
   accent=B88725,
   example=343537,
@@ -24,16 +23,12 @@
 
 \usepackage{unicode-math}
 \usepackage{xeCJK}
-% For Windows
-\setsansfont[Scale=0.92]{Segoe UI}
-\setCJKsansfont[Scale=0.92]{Meiryo}
-% FakeBoldの値を変えると数式フォントの太さも変わる
-\setmathfont[FakeBold=0.5]{latinmodern-math.otf}
-\setmathrm[FakeBold=0.5]{latinmodern-math.otf}
-
-\usepackage[bb=boondox,cal=cm,bbscaled=1.05,calscaled=0.97]{mathalfa}
-\renewcommand{\mathbb}[1]{\mathbbb{#1}}
-\renewcommand{\mathcal}[1]{\mathbcal{#1}}
+\setsansfont[Scale=0.92]{Noto Sans}
+\setCJKsansfont[Scale=0.92]{Noto Sans JP}
+\setmathfont[FakeBold=1.0]{latinmodern-math.otf}
+\setmathrm[FakeBold=1.0]{latinmodern-math.otf}
+\setmathfont[FakeBold=0.8,Scale=1.04,range={bb}]{XITS Math}
+\setmathfont[FakeBold=1.0,range={cal}]{STIX Two Math}
 \newcommand{\bm}[1]{\mathbfit{#1}}
 
 \BeforeBeginEnvironment{align}{\vspace{-1.2ex}}
@@ -60,7 +55,7 @@
 
   \section{はじめに}
   \subsection{ブロック}
-  \begin{frame}{Lorem ipsum}
+  \begin{frame}{ブロック}
     \begin{block}{Lorem ipsum}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     \end{block}
@@ -75,7 +70,7 @@
   \end{frame}
 
   \subsection{箇条書き}
-  \begin{frame}{Lorem ipsum}
+  \begin{frame}{箇条書き}
     \begin{itemize}
       \item Lorem ipsum
       \begin{itemize}
@@ -92,19 +87,18 @@
   \end{frame}
 
   \subsection{数式}
-  \begin{frame}{Lorem ipsum}
-    \begin{block}{Cauchy's integral formula}
-      \begin{itemize}
-        \item $\Omega\subset\bbC$
-        \item $f:\Omega\to\bbC$ … $\Omega$内で解析的な関数
-        \item $\Gamma$ … $\Omega$内の閉路
-        \item $a$ … $\Gamma$内の1点
-      \end{itemize}
-      \begin{align}
-        % \rmi is \mathrm{i} defined in macro.tex
-        f(a) = \frac{1}{2\pi\rmi} \int_\Gamma \frac{f(z)}{z-a} \dd{z}
-      \end{align}
-    \end{block}
+  \begin{frame}{数式}
+    \begin{align}
+      f(a) = \frac{1}{2\pi\rmi} \int_\Gamma \frac{f(z)}{z-a} \dd{z}
+    \end{align}
+    \begin{itemize}
+      \item $\rma,\rmb,\rmc,\dots,\rmx,\rmy,\rmz$. $\rmA,\rmB,\rmC,\dots,\rmX,\rmY,\rmZ$.
+      \item $a,b,c,\dots,x,y,z$. $A,B,C,\dots,X,Y,Z$.
+      \item $\bfa,\bfb,\bfc,\dots,\bfx,\bfy,\bfz$. $\bfA,\bfB,\bfC,\dots,\bfX,\bfY,\bfZ$.
+      \item $\bma,\bmb,\bmc,\dots,\bmx,\bmy,\bmz$. $\bmA,\bmB,\bmC,\dots,\bmX,\bmY,\bmZ$.
+      \item $\bba,\bbb,\bbc,\dots,\bbx,\bby,\bbz$. $\bbA,\bbB,\bbC,\dots,\bbX,\bbY,\bbZ$.
+      \item $\calA,\calB,\calC,\dots,\calX,\calY,\calZ$.
+    \end{itemize}
   \end{frame}
 
 

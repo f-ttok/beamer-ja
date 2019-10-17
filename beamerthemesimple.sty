@@ -7,14 +7,12 @@
 \DeclareOptionX{example}{\definecolor{example}{HTML}{#1}}
 \DeclareOptionX{fg_default}{\definecolor{fg_default}{HTML}{#1}}
 \DeclareOptionX{bg_default}{\definecolor{bg_default}{HTML}{#1}}
-\DeclareOptionX{totalframenumber}{\let\totalframenumber#1}
 \ExecuteOptionsX{
   primary=1874c4,
   accent=852525,
   example=495057,
   fg_default=343a40,
   bg_default=ffffff,
-  totalframenumber=\inserttotalframenumber
 }
 \ProcessOptionsX\relax
 
@@ -52,13 +50,14 @@
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=1.5em\raisebox{0.2ex}{\color{fg_default!65!bg_default}$\bullet$}\hskip0.5em\inserttocsubsection\par}
 \setbeamertemplate{title page}[default][left]
 \setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{frametitle}{
   \vskip5pt
   \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{frametitle}
     \usebeamerfont{frametitle}\hspace{13pt}\insertframetitle\hfill
-    \normalsize\mdseries\insertframenumber\,/\,\totalframenumber
+    \normalsize\mdseries\insertframenumber\,/\,\inserttotalframenumber
     \hspace{13pt}
   \end{beamercolorbox}
   \vskip-3.4pt
