@@ -8,10 +8,10 @@
 \DeclareOptionX{fg_default}{\definecolor{fg_default}{HTML}{#1}}
 \DeclareOptionX{bg_default}{\definecolor{bg_default}{HTML}{#1}}
 \ExecuteOptionsX{
-  primary=1874c4,
-  accent=852525,
-  example=495057,
-  fg_default=343a40,
+  primary=1E4F94,
+  accent=E0640B,
+  example=444444,
+  fg_default=323232,
   bg_default=ffffff,
 }
 \ProcessOptionsX\relax
@@ -33,6 +33,7 @@
 \setbeamercolor{footline}{fg=bg_default,bg=fg_default!90!bg_default}
 \usefonttheme{professionalfonts}
 \usefonttheme{metropolis}
+\setbeamerfont{alerted text}{series=\bfseries}
 \setbeamerfont{title}{size=\Large}
 \setbeamerfont{author}{size=\large}
 \setbeamerfont{frametitle}{size=\Large, series=\mdseries}
@@ -54,7 +55,6 @@
 \setbeamertemplate{title page}[default][left]
 \setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{frametitle}{
-  \vskip5pt
   \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{frametitle}
     \usebeamerfont{frametitle}\hspace{13pt}\insertframetitle\hfill
     \normalsize\mdseries\insertframenumber\,/\,\inserttotalframenumber

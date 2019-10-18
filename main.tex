@@ -2,12 +2,11 @@
 \documentclass[12pt,unicode]{beamer}
 
 \usetheme[
-  primary=2B6A6C,
-  accent=B88725,
-  example=343537,
-  fg_default=222222,
+  % primary=317589,
+  % accent=DC5E4A,
+  % example=343537,
+  % fg_default=222222,
 ]{simple}
-
 
 \usepackage{amsmath}
 \usepackage[notrig]{physics}
@@ -23,8 +22,12 @@
 
 \usepackage{unicode-math}
 \usepackage{xeCJK}
-\setsansfont[Scale=0.92]{Noto Sans}
-\setCJKsansfont[Scale=0.92]{Noto Sans JP}
+% \setsansfont[Scale=0.95]{Segoe UI}          % Windows
+% \setCJKsansfont[Scale=0.92]{Meiryo}         % Windows
+% \setmonofont[Scale=0.9]{Consolas Bold}      % Windows
+\setsansfont[Scale=0.92]{Noto Sans}         % Linux (Ubuntu, Opensuse, etc...)
+\setCJKsansfont[Scale=0.92]{Noto Sans JP}   % Linux
+\setmonofont[Scale=0.92]{Ubuntu Mono Bold}  % Linux
 \setmathfont[FakeBold=1.0]{latinmodern-math.otf}
 \setmathrm[FakeBold=1.0]{latinmodern-math.otf}
 \setmathfont[FakeBold=0.8,Scale=1.04,range={bb}]{XITS Math}
@@ -43,7 +46,7 @@
 \input{macro.tex}
 
 \title{タイトル}
-\author{著者}
+\author[名字とか]{フルネーム}
 \date{日時}
 \begin{document}
   {\setbeamertemplate{footline}{}\maketitle}
@@ -98,6 +101,16 @@
       \item $\bma,\bmb,\bmc,\dots,\bmx,\bmy,\bmz$. $\bmA,\bmB,\bmC,\dots,\bmX,\bmY,\bmZ$.
       \item $\bba,\bbb,\bbc,\dots,\bbx,\bby,\bbz$. $\bbA,\bbB,\bbC,\dots,\bbX,\bbY,\bbZ$.
       \item $\calA,\calB,\calC,\dots,\calX,\calY,\calZ$.
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}{文字の装飾}
+    \begin{itemize}
+      \item Lorem ipsum dolor sit amet
+      \item \textbf{consectetur adipisicing elit}
+      \item \textit{sed do eiusmod tempor}
+      \item \texttt{incididunt ut labore et}
+      \item \alert{dolore magna aliqua}
     \end{itemize}
   \end{frame}
 
