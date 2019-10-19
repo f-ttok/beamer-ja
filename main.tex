@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-\documentclass[12pt,unicode]{beamer}
+\documentclass[unicode]{beamer}
 
 \usetheme[
   % primary=317589,
@@ -22,16 +22,16 @@
 
 \usepackage{unicode-math}
 \usepackage{xeCJK}
-% \setsansfont[Scale=0.95]{Segoe UI}          % Windows
-% \setCJKsansfont[Scale=0.92]{Meiryo}         % Windows
-% \setmonofont[Scale=0.9]{Consolas Bold}      % Windows
-\setsansfont[Scale=0.92]{Noto Sans}         % Linux (Ubuntu, Opensuse, etc...)
-\setCJKsansfont[Scale=0.92]{Noto Sans JP}   % Linux
-\setmonofont[Scale=0.92]{Ubuntu Mono Bold}  % Linux
-\setmathfont[FakeBold=1.0]{latinmodern-math.otf}
-\setmathrm[FakeBold=1.0]{latinmodern-math.otf}
-\setmathfont[FakeBold=0.8,Scale=1.04,range={bb}]{XITS Math}
-\setmathfont[FakeBold=1.0,range={cal}]{STIX Two Math}
+\setsansfont[Scale=1.09]{Segoe UI} % Windows
+\setCJKsansfont{Meiryo}            % Windows
+\setmonofont{Consolas Bold}        % Windows
+% \setsansfont{Noto Sans}            % Linux (Ubuntu, Opensuse, etc...)
+% \setCJKsansfont{Noto Sans JP}      % Linux
+% \setmonofont{Ubuntu Mono Bold}     % Linux
+\setmathfont[Scale=1.09, FakeBold=1.0]{latinmodern-math.otf}
+\setmathrm[Scale=1.09, FakeBold=1.0]{latinmodern-math.otf}
+\setmathfont[Scale=1.13, FakeBold=0.8, range={bb}]{XITS Math}
+\setmathfont[Scale=1.09, FakeBold=1.0,range={cal}]{STIX Two Math}
 \newcommand{\bm}[1]{\mathbfit{#1}}
 
 \BeforeBeginEnvironment{align}{\vspace{-1.2ex}}
