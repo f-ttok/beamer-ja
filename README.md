@@ -10,8 +10,8 @@ xelatex main.tex
 linuxの人はMeiryoとSegoe UIがインストールされていないので `\setsansfont` `\setCJKsansfont` の中を適当に変えましょう
 
 ```latex
-\setsansfont[Scale=0.92]{Noto Sans}
-\setCJKsansfont[Scale=0.92]{Noto Sans JP}
+\setsansfont{Noto Sans}
+\setCJKsansfont{Noto Sans JP}
 ```
 
 ## 色のカスタマイズ
