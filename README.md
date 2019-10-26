@@ -7,12 +7,8 @@ xelatex main.tex
 ```
 
 ## フォントの設定
-linuxの人はMeiryoとSegoe UIがインストールされていないので `\setsansfont` `\setCJKsansfont` の中を適当に変えましょう
-
-```latex
-\setsansfont{Noto Sans}
-\setCJKsansfont{Noto Sans JP}
-```
+`\setsansfont` `\setCJKsansfont` をいじると，フォントを変えられる．
+デフォルトはUbuntuの標準フォントにしてあるので，Windowsの人は，コメントをつけたり外したりして調節してください．
 
 ## 色のカスタマイズ
 テーマのオプションに色を16進数でわたすと色を変えられる．

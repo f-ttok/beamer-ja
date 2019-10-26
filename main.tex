@@ -20,19 +20,29 @@
 \usepackage{fontawesome}
 \setbeamertemplate{bibliography item}{\faFile}
 
+% フォント設定
 \usepackage{unicode-math}
 \usepackage{xeCJK}
-\setsansfont[Scale=1.09]{Segoe UI} % Windows
-\setCJKsansfont{Meiryo}            % Windows
-\setmonofont{Consolas Bold}        % Windows
-% \setsansfont{Noto Sans}            % Linux (Ubuntu, Opensuse, etc...)
-% \setCJKsansfont{Noto Sans JP}      % Linux
-% \setmonofont{Ubuntu Mono Bold}     % Linux
+% \setsansfont[Scale=1.09]{Segoe UI} % Windows
+% \setCJKsansfont{Meiryo}            % Windows
+% \setmonofont{Consolas Bold}        % Windows
+\setsansfont{Noto Sans}            % Linux (Ubuntu, Opensuse, etc...)
+\setCJKsansfont{Noto Sans JP}      % Linux
+\setmonofont{Ubuntu Mono Bold}     % Linux
 \setmathfont[Scale=1.09, FakeBold=1.0]{latinmodern-math.otf}
 \setmathrm[Scale=1.09, FakeBold=1.0]{latinmodern-math.otf}
 \setmathfont[Scale=1.13, FakeBold=0.8, range={bb}]{XITS Math}
 \setmathfont[Scale=1.09, FakeBold=1.0,range={cal}]{STIX Two Math}
 \newcommand{\bm}[1]{\mathbfit{#1}}
+
+% →や∵を和文フォントで出力する
+\xeCJKDeclareCharClass{CJK}{`↑}
+\xeCJKDeclareCharClass{CJK}{`←}
+\xeCJKDeclareCharClass{CJK}{`→}
+\xeCJKDeclareCharClass{CJK}{`↓}
+\xeCJKDeclareCharClass{CJK}{`∴}
+\xeCJKDeclareCharClass{CJK}{`∵}
+\xeCJKDeclareCharClass{CJK}{`※}
 
 \BeforeBeginEnvironment{align}{\vspace{-1.2ex}}
 \AfterEndEnvironment{align}{\vskip-1.2ex}
@@ -56,21 +66,21 @@
     \tableofcontents
   \end{frame}
 
+
   \section{はじめに}
   \subsection{ブロック}
   \begin{frame}{ブロック}
-    \begin{block}{Lorem ipsum}
+    \begin{block}{block環境}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     \end{block}
-
-    \begin{alertblock}{Lorem ipsum}
+    \begin{alertblock}{alertblock環境}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     \end{alertblock}
-
-    \begin{exampleblock}{Lorem ipsum}
+    \begin{exampleblock}{exampleblock環境}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     \end{exampleblock}
   \end{frame}
+
 
   \subsection{箇条書き}
   \begin{frame}{箇条書き}
@@ -82,12 +92,12 @@
       \end{itemize}
       \item Lorem ipsum
     \end{itemize}
-
     \begin{enumerate}
       \item Lorem ipsum
       \item Lorem ipsum
     \end{enumerate}
   \end{frame}
+
 
   \subsection{数式}
   \begin{frame}{数式}
@@ -104,15 +114,27 @@
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{文字の装飾}
+
+  \begin{frame}{その他}
     \begin{itemize}
-      \item Lorem ipsum dolor sit amet
-      \item \textbf{consectetur adipisicing elit}
-      \item \textit{sed do eiusmod tempor}
-      \item \texttt{incididunt ut labore et}
-      \item \alert{dolore magna aliqua}
+      \item \texttt{\textbackslash text**}等の装飾
+      \begin{itemize}
+        \item Lorem ipsum dolor sit amet
+        \item \textbf{consectetur adipisicing elit}
+        \item \textit{sed do eiusmod tempor}
+        \item \texttt{incididunt ut labore et}
+        \item \alert{dolore magna aliqua}
+      \end{itemize}
+      \item ※，∵，→，↓等は和文フォントで出力されるはず
+      \item 論文の引用はbibtexを使うと楽．例: \cite{MR3642670}
     \end{itemize}
   \end{frame}
 
 
+\appendix
+  \begin{frame}[allowframebreaks]{参考文献}
+    \scriptsize
+    \bibliography{reference}
+    \bibliographystyle{apalike}
+  \end{frame}
 \end{document}
