@@ -16,33 +16,42 @@
 \usepackage{tikz}
 \usepackage{setspace}
 \setstretch{1.25}
+\usepackage[absolute,overlay]{textpos}
 
-\usepackage{fontawesome}
-\setbeamertemplate{bibliography item}{\faFile}
 
 % フォント設定
 \usepackage{unicode-math}
 \usepackage[xCJKecglue={\hskip 3pt plus 0.08\baselineskip}]{xeCJK}
-% \setsansfont[Scale=1.09]{Segoe UI} % Windows
-% \setCJKsansfont{Meiryo}            % Windows
-% \setmonofont{Consolas Bold}        % Windows
-\setsansfont{Noto Sans}            % Linux (Ubuntu, Opensuse, etc...)
-\setCJKsansfont{Noto Sans JP}      % Linux
-\setmonofont{Ubuntu Mono Bold}     % Linux
-\setmathfont[Scale=1.09, FakeBold=1.0]{latinmodern-math.otf}
-\setmathrm[Scale=1.09, FakeBold=1.0]{latinmodern-math.otf}
-\setmathfont[Scale=1.13, FakeBold=0.8, range={bb}]{XITS Math}
-\setmathfont[Scale=1.09, FakeBold=1.0,range={cal}]{STIX Two Math}
-\newcommand{\bm}[1]{\mathbfit{#1}}
+% フォント重め
+\setmainfont{Noto Sans Medium}
+\setsansfont{Noto Sans Medium}[WordSpace=1.5, LetterSpace=-2, BoldFont=Noto Sans Bold]
+\setCJKsansfont{Noto Sans JP Medium}[BoldFont=Noto Sans JP Bold, Scale=MatchUppercase]
+\setmonofont{Roboto Mono Medium}
+\setmathfont{latinmodern-math.otf}[Scale=MatchUppercase, FakeBold=2.7]
+\setmathrm{latinmodern-math.otf}[Scale=MatchUppercase, FakeBold=2.7]
+\setmathfont{XITS Math}[Scale=MatchUppercase, FakeBold=2.3, range={bb}]
+\setmathfont{STIX Two Math}[Scale=MatchUppercase, FakeBold=2.7,range={cal}]
+\setmathfont{STIX Two Math}[Scale=MatchUppercase, FakeBold=0.1, range={\setminus}]
+% フォント軽め
+%% Windowsでデフォルトで入ってるフォントを使うとき
+% \setmainfont{Segoe UI}
+% \setsansfont{Segoe UI}
+% \setCJKsansfont{Meiryo}[Scale=MatchUppercase]
+% \setmonofont{Consolas Bold}[Scale=MatchUppercase]
+%% フリーフォントを使うとき
+% \setmainfont{Noto Sans}
+% \setsansfont{Noto Sans}[WordSpace=1.5, LetterSpace=-2]
+% \setCJKsansfont{Noto Sans JP}[Scale=MatchUppercase]
+% \setmonofont{Roboto Mono Bold}[Scale=MatchUppercase]
+%% 数式
+% \setmathfont{latinmodern-math.otf}[Scale=MatchUppercase, FakeBold=1.0]
+% \setmathrm{latinmodern-math.otf}[Scale=MatchUppercase, FakeBold=1.0]
+% \setmathfont{XITS Math}[Scale=MatchUppercase, FakeBold=0.8, range={bb}]
+% \setmathfont{STIX Two Math}[Scale=MatchUppercase, FakeBold=1.0,range={cal}]
+% \setmathfont{STIX Two Math}[Scale=MatchUppercase, FakeBold=0.1, range={\setminus}]
 
 % →や∵を和文フォントで出力する
-\xeCJKDeclareCharClass{CJK}{`↑}
-\xeCJKDeclareCharClass{CJK}{`←}
-\xeCJKDeclareCharClass{CJK}{`→}
-\xeCJKDeclareCharClass{CJK}{`↓}
-\xeCJKDeclareCharClass{CJK}{`∴}
-\xeCJKDeclareCharClass{CJK}{`∵}
-\xeCJKDeclareCharClass{CJK}{`※}
+\xeCJKDeclareCharClass{CJK}{`↑, `←, `→, `↓, `∴, `∵, `※}
 
 \BeforeBeginEnvironment{align}{\vspace{-1.2ex}}
 \AfterEndEnvironment{align}{\vskip-1.2ex}
@@ -132,9 +141,14 @@
 
 
 \appendix
-  \begin{frame}[allowframebreaks]{参考文献}
+  \begin{frame}[t,allowframebreaks]{参考文献}
     \scriptsize
     \bibliography{reference}
     \bibliographystyle{apalike}
+  \end{frame}
+
+  % コンパイル後表示させない隠しスライド
+  \begin{frame}<presentation:0>[noframenumbering]
+    \cite{MR3642670}
   \end{frame}
 \end{document}

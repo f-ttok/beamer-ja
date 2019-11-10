@@ -1,6 +1,8 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{beamerthemesimple}
 \RequirePackage{xkeyval}
+\RequirePackage{fontawesome}
+\RequirePackage{appendixnumberbeamer}
 
 \DeclareOptionX{primary}{\definecolor{primary}{HTML}{#1}}
 \DeclareOptionX{accent}{\definecolor{accent}{HTML}{#1}}
@@ -25,8 +27,8 @@
 \setbeamercolor{itemize item}{fg=fg_default!80!bg_default}
 \setbeamercolor{itemize subitem}{fg=fg_default!50!bg_default}
 \setbeamercolor{enumerate item}{fg=fg_default}
-\setbeamercolor{bibliography entry author}{fg=primary!90!bg_default}
-\setbeamercolor{bibliography entry title}{fg=primary}
+\setbeamercolor{bibliography entry author}{fg=primary}
+\setbeamercolor{bibliography entry title}{fg=primary!50!fg_default}
 \setbeamercolor{bibliography entry location}{fg=fg_default}
 \setbeamercolor{bibliography entry note}{fg=fg_default}
 \setbeamercolor{bibliography item}{fg=primary}
@@ -34,26 +36,28 @@
 \usefonttheme{professionalfonts}
 \usefonttheme{metropolis}
 \setbeamerfont{alerted text}{series=\bfseries}
-\setbeamerfont{title}{size=\Large}
 \setbeamerfont{author}{size=\large}
-\setbeamerfont{frametitle}{size=\Large, series=\mdseries}
-\setbeamerfont{footline}{series=\bfseries}
-\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
-\setbeamerfont{section in toc}{size=\normalsize, series=\bfseries}
-\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
-\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
-\setbeamerfont{enumerate item}{series=\bfseries}
 \setbeamerfont{bibliography entry author}{size=\scriptsize, series=\bfseries}
-\setbeamerfont{bibliography entry title}{size=\scriptsize, series=\bfseries}
 \setbeamerfont{bibliography entry location}{size=\scriptsize, series=\mdseries}
 \setbeamerfont{bibliography entry note}{size=\scriptsize, series=\mdseries}
+\setbeamerfont{bibliography entry title}{size=\scriptsize, series=\bfseries}
 \setbeamerfont{bibliography item}{size=\scriptsize}
+\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
+\setbeamerfont{enumerate item}{series=\bfseries}
+\setbeamerfont{footline}{series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large, series=\mdseries}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
+\setbeamerfont{section in toc}{size=\normalsize, series=\bfseries}
+\setbeamerfont{title}{size=\Large}
+\setbeamertemplate{bibliography item}{\faFile}
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamertemplate{frametitle continuation}{\insertcontinuationcount}
+\setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}{\leavevmode\leftskip=1.5em\raisebox{0.2ex}{\color{fg_default!65!bg_default}$\bullet$}\hskip0.5em\inserttocsubsection\par}
 \setbeamertemplate{title page}[default][left]
-\setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{frametitle}{
   \vskip4.5pt
   \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex]{frametitle}
